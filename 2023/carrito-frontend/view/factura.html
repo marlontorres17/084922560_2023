@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Productos</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../asset/css/global.css'>
+    <script src='../js/producto.js'></script>
+
+    <!-- Librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>Legend</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Codigo</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="codigo" id="codigo" value=""
+                                placeholder="Ingresar codigo">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Fecha</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="fecha" id="fecha" value=""
+                                placeholder="Ingresar fecha">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Valor_total</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="valor_total" id="valor_total" value=""
+                                placeholder="Ingresar valor_total">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Cliente_id</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="cliente_id" id="cliente_id" value=""
+                                placeholder="Ingresar cliente_id">
+                        </div>
+
+                        
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="buttonData">
+            <br>
+            <button name="btnAgregar" onclick="Agregar()">Agragar</button>
+        </div>
+        <div id="outputData">
+            <!-- Aquí llegan los datos de la bd -->
+        </br>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Codigo</th>
+                        <th>Fecha</th>
+                        <th>Valor_total</th>
+                        <th>Cliente_id</th>
+                        <th colspan="2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m</td>
+                        <td>03/12/2023</td>
+                        <td>30.000</td>
+                        <td>117</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>m</td>
+                        <td>03/12/2023</td>
+                        <td>30.000</td>
+                        <td>117</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>m</td>
+                        <td>03/12/2023</td>
+                        <td>30.000</td>
+                        <td>117</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>m</td>
+                        <td>03/12/2023</td>
+                        <td>30.000</td>
+                        <td>117</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>m</td>
+                        <td>03/12/2023</td>
+                        <td>30.000</td>
+                        <td>117</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>m</td>
+                        <td>03/12/2023</td>
+                        <td>30.000</td>
+                        <td>117</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

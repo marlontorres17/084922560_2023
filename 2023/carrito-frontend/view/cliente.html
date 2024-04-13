@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Productos</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../asset/css/global.css'>
+    <script src='../js/producto.js'></script>
+
+    <!-- Librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>Legend</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="nombre" id="nombre" value=""
+                                placeholder="Ingresar nombre">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Correo</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="correo" id="correo" value=""
+                                placeholder="Ingresar correo">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Telefono</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="telefono" id="telefono" value=""
+                                placeholder="Ingresar telefono">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Direccion</label>
+                        <div class="col-sm-10">
+                            </br>
+                            <input type="text" class="form-control" name="direccion" id="direccion" value=""
+                                placeholder="Ingresar direccion">
+                        </div>
+
+                        
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="buttonData">
+            <br>
+            <button name="btnAgregar" onclick="Agregar()">Agragar</button>
+        </div>
+        <div id="outputData">
+            <!-- Aquí llegan los datos de la bd -->
+        </br>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
+                        <th colspan="2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Luis Hernandez</td>
+                        <td>luis.hernandez@example.com</td>
+                        <td>(111) 222-3333</td>
+                        <td>303 Birch St, Township</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>Isabel Gomez</td>
+                        <td>isabel.gomez@example.com</td>
+                        <td>(333) 555-7890</td>
+                        <td>202 Maple St, Borough</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>Carlos Perez</td>
+                        <td>carlos.perez@example.com</td>
+                        <td>(789) 987-6543</td>
+                        <td>101 Elm St, Hamlet</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>Maria Rodriguez</td>
+                     <td>maria.rodriguez@example.com</td>
+                        <td>(555) 123-4567</td>
+                        <td>789 Pine St, Village</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@example.com</td>
+                        <td>(987) 654-3210</td>
+                        <td>456 Oak St, Town</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john.doe@example.com</td>
+                        <td>(123) 456-7890</td>
+                        <td>123 Main St, City</td>
+                        <th><img src="../asset/icon/pencil-square.svg" alt=""></th>
+                        <th><img src="../asset/icon/trash3.svg" alt=""></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

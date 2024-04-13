@@ -1,0 +1,60 @@
+#include <cpprest/json.h>
+
+using namespace web;
+using namespace web::http;
+using namespace web::http::experimental::listener;
+
+class WebServer {
+public:
+    WebServer(const utility::string_t& url)
+        : listener(url) {
+        // Configurar el manejador para solicitudes GET
+        listener.support(methods::GET, std::bind(&WebServer::handle_get, this, std::placeholders::_1));
+    }
+
+    void start() {
+        // Abrir el listener
+        listener.open().then([this](pplx::task<void> t) {
+            try {
+                t.get();
+            } catch (const std::exception& e) {
+                std::wcerr << e.what() << std::endl;
+            }
+        }).wait();
+
+        // Imprimir la URL donde el servidor está escuchando
+        std::wcout << U("Server listening at: ") << listener.uri().to_string() << std::endl;
+
+        // Mantener el programa en ejecución hasta que se reciba una señal para detenerlo
+        std::unique_lock<std::mutex> lock(mtx);
+        cv.wait(lock);
+    }
+
+private:
+    void handle_get(http_request request) {
+        // Construir la respuesta JSON
+        web::json::value response;
+        response[U("message")] = web::json::value::string(U("Hello, World!"));
+
+        // Enviar la respuesta al cliente con el código de estado OK (200)
+        request.reply(status_codes::OK, response);
+
+        // Notificar a la condición que se ha recibido una solicitud GET
+        std::unique_lock<std::mutex> lock(mtx);
+        cv.notify_all();
+    }
+
+    http_listener listener;  // Listener para manejar las solicitudes HTTP
+    std::mutex mtx;  // Mutex para la sincronización
+    std::condition_variable cv;  // Condición para esperar eventos
+};
+
+int main() {
+    utility::string_t url = U("http://localhost:8080");
+    WebServer server(url);
+    
+    // Iniciar el servidor
+    server.start();
+
+    return 0;
+}

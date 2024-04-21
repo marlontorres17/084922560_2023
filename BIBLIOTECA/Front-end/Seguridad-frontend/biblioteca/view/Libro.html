@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <!-- librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+    <!-- ajax -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Script -->
+    <script src='../js/Libro.js'></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script><!-- Agregar el autocomplete -->
+</head>
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>Libro</legend>
+
+                    
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Titulo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="titulo" id="titulo" value="" placeholder="Titulo">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Autor</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="persona" placeholder="autor"> <!-- Agregar el campo oculto para almacenar el ID de la persona -->
+                            <input type="hidden" id="persona_id" name="persona_id">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Año publicacion</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" name="anoPublicacion" id="anoPublicacion" value="" placeholder="Año publicacion">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">genero</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="genero" id="genero" value="" placeholder="genero">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Estado</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" id="state">
+                                <option selected>--Seleccione--</option>
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div id="buttonData">
+                <br>
+                <button name="btnAgregar" onclick="save()" class="btn btn-success">Agregar</button>
+                <button name="btnAgregarLibro" onclick="libroTotal()"  class="btn btn-success">Ver libros en total</button>
+        <input disabled type="text" name="libros" id="libros">
+            </div>
+            <div id="outputData">
+                <br>
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>año Publicación</th>
+                            <th>género</th>
+                            <th>Estado</th>
+                            <th colspan="2">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultData">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        
+            loadData();
+            loadAutor();
+
+    </script>
+</body>
+</html>
